@@ -20,6 +20,8 @@ Original Author: Shay Gal-on
 #include <stdlib.h>
 #include "coremark.h"
 
+#include "pico/stdlib.h"
+
 #if VALIDATION_RUN
 volatile ee_s32 seed1_volatile = 0x3415;
 volatile ee_s32 seed2_volatile = 0x3415;
@@ -127,6 +129,7 @@ ee_u32 default_num_contexts = 1;
 void
 portable_init(core_portable *p, int *argc, char *argv[])
 {
+    setup_default_uart();
 
     (void)argc; // prevent unused warning
     (void)argv; // prevent unused warning
