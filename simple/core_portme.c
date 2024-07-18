@@ -129,7 +129,7 @@ ee_u32 default_num_contexts = 1;
 void
 portable_init(core_portable *p, int *argc, char *argv[])
 {
-    setup_default_uart();
+    stdio_init_all();
 
     (void)argc; // prevent unused warning
     (void)argv; // prevent unused warning
